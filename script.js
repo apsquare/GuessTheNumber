@@ -12,24 +12,24 @@ document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
-  //No input provided
+ 
   if (!guess) {
     displayMessage('⛔️No number⛔️');
 
-    //Correct guess
+    
   } else if (guess === secretNumber) {
     displayMessage('🎉Correct Number');
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
 
-    //Whatever score is left will be your final score
+    
     if (score > highScore) {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
 
-    //Guess is not equal to the secret number
+  
   } else if (guess !== secretNumber) {
     if (score > 0) {
       if (guess > secretNumber) {
